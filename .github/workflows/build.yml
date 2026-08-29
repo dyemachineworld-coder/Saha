@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Buildozer ile APK Uretimi
         uses: ArtemSBulgakov/buildozer-action@v1
@@ -19,7 +19,7 @@ jobs:
           buildozer_version: master
           
       - name: Uretilen APK'yi Tahliye Et
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Saha-Operasyon-APK
           path: ${{ steps.buildozer.outputs.filename }}
